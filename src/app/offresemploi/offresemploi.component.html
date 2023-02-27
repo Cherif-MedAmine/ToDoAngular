@@ -1,0 +1,30 @@
+<h1>LISTE DES OFFRES</h1>
+search:<input type="text" [(ngModel)]="search" >
+<hr>
+<table class="table table-striped table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Entreprise</th>
+        <th scope="col">Refirence</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Postuler</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let o of listOffre">
+      <tr *ngIf="o.entreprise == search || !search">
+        <th >{{o.entreprise}}</th>
+        <td>{{o.refirence}}</td>
+        <td>{{o.titre}}</td>
+        <td> <button type="button" class="btn btn-dark"(click)="postuler()" [disabled]="o.etat==false">postuler</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-outline-dark"(click)="cloturecount()">cloture =   {{cloture}}</button>
+
+  <app-articles></app-articles>
+  <br>
+  <br>
+  <button routerLink="form">FORM</button>
+
+  
+  

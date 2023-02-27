@@ -1,0 +1,15 @@
+<h1>Les articles du jour</h1>
+<section *ngFor="let a of listArticle">
+<div *ngIf="a.categorie !=cat" class="card" style="width: 18rem;">
+    <div  [ngStyle]=" {'background-color': (a.categorie === 'Education') ? 'aqua' : 'none'}" class="card-body">
+      <h5 class="card-title">{{a.titre}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{a.auteur}}</h6>
+      <p class="card-text">{{a.date}}</p>
+      <p class="card-text">{{a.categorie}}</p>
+    </div>
+  </div>
+  <br>
+  
+</section>
+<button type="button" class="btn btn-outline-dark"(click)="countNB()">cloture =   {{nb}}</button>
+

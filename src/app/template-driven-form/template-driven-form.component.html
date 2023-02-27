@@ -1,0 +1,34 @@
+<p>TP3:</p>
+
+<form  #addForm="ngForm">
+    <div class="container">
+    <div style="width: 500px;">
+        <h2>Information generale</h2>
+      <label  class="form-label">Nom</label>
+      <input type="text" class="form-control" name="nom" ngModel  required #nom="ngModel" [class.is-invalid]="nom.invalid && nom.touched">
+      <span style="color: red;"   *ngIf="nom.touched && nom?.errors?.['required']" >Name is required</span>
+      <label  class="form-label">Email</label>
+      <input type="text" class="form-control" name="email" ngModel  required #email="ngModel" [class.is-invalid]="email.invalid && email.touched">
+      <span style="color: red;"   *ngIf="email.touched && email?.errors?.['required']" >Email is required</span>
+      <span style="color: red;"   *ngIf="email.touched && email?.errors?.['email']" >Email is required</span>
+      <span style="color: red;"   *ngIf="email.touched && email?.errors?.['minlength']" >Email is required</span>
+      <h2>Information de payement</h2>
+      <label  class="form-label">Type de carte</label>
+      <input type="text" class="form-control" name="type" ngModel  required #type="ngModel" [class.is-invalid]="type.invalid && type.touched">
+      <span style="color: red;"   *ngIf="type.touched && type?.errors?.['required']" >Title is required</span>
+      <label  class="form-label">Numero de carte</label>
+      <input type="text" class="form-control" name="numero" ngModel  required #numero="ngModel" [class.is-invalid]="numero.invalid && numero.touched">
+      <span style="color: red;"   *ngIf="numero.touched && numero?.errors?.['required']" >Title is required</span>
+      <span style="color: red;"   *ngIf="email.touched && numero?.errors?.['minlength']" >Email is required</span>
+      <span style="color: red;"   *ngIf="email.touched && numero?.errors?.['maxlength']" >Email is required</span>
+      <label  class="form-label">Date d'expiration</label>
+      <input type="date" class="form-control" name="date" ngModel  required #date="ngModel" [class.is-invalid]="date.invalid && date.touched">
+      <span style="color: red;"   *ngIf="date.touched && date?.errors?.['required']" >Title is required</span>
+      <label  class="form-label">Code</label>
+      <input type="text" class="form-control" name="code" ngModel  required #code="ngModel" [class.is-invalid]="code.invalid && code.touched">
+      <span style="color: red;"  *ngIf="code.touched && code?.errors?.['required']" >Title is required</span>
+      
+    </div>
+    <button type="submit" class="btn btn-primary"  [disabled]="addForm.invalid">Submit</button>
+</div>
+</form>
